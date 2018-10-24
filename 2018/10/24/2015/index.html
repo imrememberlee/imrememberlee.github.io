@@ -407,7 +407,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/10/24/2015/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/10/24/2015/" itemprop="commentsCount"></span>
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2018/10/24/2015/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -540,11 +540,7 @@
 
   
     <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
     </div>
-
   
 
 
@@ -850,44 +846,34 @@
 
 
 
-<!-- LOCAL: You can save these files to your site and update links -->
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
     
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: '1540366093000',
-            owner: 'imrememberlee',
-            repo: 'imrememberlee.github.io',
-            
-            lang: ":lang" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-            
-            oauth: {
-            
-            
-                client_secret: '643991a0bcb3b83d2e01fe26c0c4bc3ae876142e',
-            
-                client_id: '3d46b2f34389c6f28b1b'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      renderGitment();
-      
-      </script>
-    
-
-
-
+  
+  <script src="https://unpkg.com/valine@latest/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'ksdN5Mcd5vbOcXOYlESbF7w0-gzGzoHsz',
+        appKey: 'QTSJzdPzLhEYw1Kj0Qbr3RCb',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
 
 
 
