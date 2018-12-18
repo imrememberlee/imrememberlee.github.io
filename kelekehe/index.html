@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>旅游攻略</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="stylesheet" href="res/layui/css/layui.css">
+    <link rel="stylesheet" href="res/css/global.css">
+    <link rel="stylesheet" href="res/css/yj.css">
+    <link rel="stylesheet" href="res/css/slides.css">
+		<link rel="stylesheet" href="res/css/top_map.css">
+		<script src="res/layui/layui.js"></script>
+	</head>
+	<body>
+		<iframe  src="head.html" scrolling="no" width="100%" height="65px" ></iframe>
+		<div class="main layui-clear">
+
+
+    <!-- 游记新版轮播 start -->
+    <div id="full-screen-slider" class="head">
+          <!-- 游记banner 大图 start -->
+        <ul id="slides">
+          <li style="background: url(&quot;https://m.tuniucdn.com/fb2/t1/G5/M00/B9/64/Cii-slwEpqmIJ-RYAANRlpwibWIAARKvQPHKysAA1Gu53.jpeg &quot;) center top no-repeat; z-index: 900; display: none;"><a href="http://www.tuniu.com/trips/30082515" target="_blank" rel="nofollow"></a></li>
+          <li style="background: url(&quot;https://m2.tuniucdn.com/fb2/t1/G5/M00/D7/33/Cii-slwTgnmIWxFEAAcfboo8MMYAARp8wBohKIABx-G85.jpeg &quot;) center top no-repeat; z-index: 800; display: block;"><a href="http://www.tuniu.com/trips/30357194" target="_blank" rel="nofollow"></a></li>
+        </ul>
+        <!-- 游记banner 大图 end -->
+        <div class="slide-center">
+            <!-- 游记banner 小图 start -->
+            <ul id="pagination" style="margin-left: 341px;">
+              <li class="">
+                <div class="slide-bg" style="display: block;"></div>
+                <a href="javascript:void(0)"><img src="https://m.tuniucdn.com/fb2/t1/G5/M00/B9/64/Cii-slwEpqmIJ-RYAANRlpwibWIAARKvQPHKysAA1Gu53_w200_h113_c1_t0.jpeg"></a>
+              </li>
+              <li class="current">
+                <div class="slide-bg" style="display: none;"></div>
+                <a href="javascript:void(0)"><img src="https://m2.tuniucdn.com/fb2/t1/G5/M00/D7/33/Cii-slwTgnmIWxFEAAcfboo8MMYAARp8wBohKIABx-G85_w200_h113_c1_t0.jpeg"></a>
+              </li>
+            </ul>
+            <!-- 游记banner 小图 end -->
+            <!-- 游记作者描述 start -->
+            <ul id="description">
+              <li style="display: none; z-index: 900;">
+                <a href="http://www.tuniu.com/trips/30082515">
+                  <div class="yj-name">【记录精彩旅程】12月游记福利大放送，人人有份！</div>
+                </a>
+
+                </li>
+                  <li style="z-index: 800; display: list-item;">
+                  <a href="http://www.tuniu.com/trips/30357194">
+                    <div class="yj-name">贝加尔湖的寒冬，才是我想要的冬天</div>
+                  </a>
+
+                </li>
+                    </ul>
+            <!-- 游记作者描述 end -->
+        </div>
+            <!-- 游记搜索框 start -->
+        <div class="dd_search">
+          <div class="d_search">
+            <form id="yjsearch_form" method="get" action="/search">
+              <input class="input_search J_input" type="text" name="q" placeholder="搜索游记" value="" autocomplete="off">
+              <input class="search_btn J_sub_btn" type="button">
+            </form>
+          </div>
+        </div>
+        <!-- 游记搜索框 end -->
+    </div>
+    <!-- 游记新版轮播 end -->
+
+    <div class="yj-content">
+      <!-- 左侧内容 start-->
+      <div class="yj-left-show">
+        <div class="yj-left-top">
+          <!-- 游记tab start-->
+          <ul class="yj-tab">
+            <li class="current">推荐游记</li>
+            <li>热门游记</li>
+            <li>最新发布</li>
+          </ul>
+          <div class="content-title-right">
+            <a class="my-note" href="add.html" target="_blank" rel="nofollow">
+              <span></span>
+              <em>我的游记</em>
+            </a>
+            <a class="write-note" href="add.html" target="_blank" rel="nofollow">
+              <span></span>
+              <em>发表游记</em>
+            </a>
+          </div>
+        </div>
+        <!-- 游记tab end-->
+
+        <!-- 游记列表 start-->
+        <div class="yj-list-show">
+            <div class="commen-loadding" style="display: none;"></div>
+                 <ul class="yj-list" style="display: block;">
+                    <li>
+                        <a class="list-img" href="http://www.tuniu.com/trips/30364159" target="_blank" rel="nofollow">
+                            <img src="http://m.tuniucdn.com/fb2/t1/G5/M00/DF/EE/Cii-slwXnSyIUWSKACQ1AASp0jYAARyZwBHQyAAJDUY617_w800_h0_c0_t0_w400_h300_c1_t0.jpg" alt="">
+                            <div class="list-recommend gl-jh"></div>
+                        </a>
+                        <div class="list-show">
+                            <a href="detail.html" target="_blank" rel="nofollow">
+                                <div class="list-name">一张车票两个人三个星期环游欧洲 ——记一次火车的奇幻旅程</div>
+                                <div class="list-des">（这不是干货、不是攻略，这只是一段又一段热门非热门欧洲目的地的掠影）</div>
+                            </a>
+                            <div class="list-auther">
+                                <div class="list-auther-left">
+                                    <a href="http://www.tuniu.com/person/EF7D0C52731E5D1E6C0ADFEE760D4434">
+                                        <img src="http://m.tuniucdn.com/fb2/t1/G4/M00/C3/44/Cii-VVn9qkeIX0KAAB0f86u0knEAAC6RwIjw4EAHSAL973_w90_h90_c1_t0.jpg" alt="">
+                                        <div class="list-auther-name"> 薇薇安在旅途</div>
+                                    </a>
+                                    <div class="list-scan"><i></i>32121 &nbsp;</div>
+                                    <div class="list-comment"><i></i>1 &nbsp;</div>
+                                </div>    
+                                <div class="list-auther-right ding_yes" id="dingAjax" data-id="30364159">
+                                    <i></i>
+                                    <span>3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                      <a class="list-img" href="detail.html" target="_blank" rel="nofollow">
+                        <img src="http://m.tuniucdn.com/fb2/t1/G5/M00/DC/09/Cii-slwWAx-AaG-TAU6QBl-2-6A530_w800_h0_c0_t0_w400_h300_c1_t0.png" alt="">
+                          <div class="list-recommend gl-jh"></div>
+                      </a>
+                      <div class="list-show">
+                        <a href="http://www.tuniu.com/trips/30363785" target="_blank" rel="nofollow">
+                          <div class="list-name">镇安｜我从远方赶来，只为一睹你真容</div>
+                          <div class="list-des">2018年12月6日，南京迎来了第一场雪。</div>
+                        </a>
+                        <div class="list-auther">
+                          <div class="list-auther-left">
+                            <a href="http://www.tuniu.com/person/817C83EB61E5E5EC0736479063BF502A">
+                              <img src="http://m.tuniucdn.com/filebroker/cdn/snc/f6/1d/f61dd6cd9e6ccd2f86fa07947fee6542_w90_h90_c1_t0.png" alt="">
+                              <div class="list-auther-name"> 爱玩的大表姐</div>
+                            </a>
+                            <div class="list-scan"><i></i>865 &nbsp;</div>
+                            <div class="list-comment"><i></i>0 &nbsp;</div>
+                          </div>
+                                      
+                          <div class="list-auther-right ding_yes" id="dingAjax" data-id="30363785">
+                            <i></i>
+                            <span>3</span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li>
+                      <a class="list-img" href="detail.html" target="_blank" rel="nofollow">
+                        <img src="http://b1-q.mafengwo.net/s12/M00/CB/2B/wKgED1wOFeOAWGvjAA6M4hDzQT817.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="">
+                        <div class="list-recommend gl-jh"></div>
+                      </a>
+                      <div class="list-show">
+                        <a href="http://www.tuniu.com/trips/30363160" target="_blank" rel="nofollow">
+                          <div class="list-name">放浪漫天灯，拍网红美照，带你看一个 [ 超时髦 ]泰国</div>
+                          <div class="list-des">这是我第四次来&nbsp;泰国&nbsp;了。</div>
+                        </a>
+                        <div class="list-auther">
+                          <div class="list-auther-left">
+                            <a href="http://www.tuniu.com/person/3EA6D8EFA64E0DE2A869C80D8FCE3EB1">
+                              <img src="http://m.tuniucdn.com/fb2/t1/G4/M00/9E/6B/Cii-VVnl1SSIcQasAAIXTrSGl1wAACSKADPEYcAAhdm385_w90_h90_c1_t0.jpg" alt="">
+                              <div class="list-auther-name"> dearcookie</div>
+                            </a>
+                            <div class="list-scan"><i></i>2142 &nbsp;</div>
+                            <div class="list-comment"><i></i>0 &nbsp;</div>
+                          </div>
+                          <div class="list-auther-right ding_yes" id="dingAjax" data-id="30363160">
+                            <i></i>
+                            <span>3</span>
+                          </div>
+                      </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="yj-list"></ul>
+            <ul class="yj-list"></ul>
+            <ul class="yj-list"></ul>
+        </div>
+        <!-- 游记列表 end-->
+      </div>
+    </div>
+
+
+			<div class="wrap">
+				<div class="content" style="margin-right:0">
+
+					<div style="text-align: center">
+						<div class="laypage-main"><span class="laypage-curr">1</span>
+							<a href="">2</a>
+							<a href="">3</a>
+							<a href="">4</a>
+							<a href="">5</a><span>…</span>
+							<a href="" class="laypage-last" title="尾页">尾页</a>
+							<a href="" class="laypage-next">下一页</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
