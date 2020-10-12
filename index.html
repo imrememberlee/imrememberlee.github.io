@@ -325,6 +325,220 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://imrememberlee.github.io/2020/10/12/git参数说明/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ben">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/8325671.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="易之轩">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/10/12/git参数说明/" itemprop="url">
+                  git参数说明
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-10-12 17:04:11 / Modified: 17:04:53" itemprop="dateCreated datePublished" datetime="2020-10-12T17:04:11+08:00">2020-10-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/10/12/git参数说明/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2020/10/12/git参数说明/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">2.6k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">2 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="rebase-本地commit"><a href="#rebase-本地commit" class="headerlink" title="rebase 本地commit"></a>rebase 本地commit</h3><p>如果你异常退出了 vi 窗口，不要紧张：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase --edit-todo</span><br></pre></td></tr></table></figure>
+<p>这时候会一直处在这个编辑的模式里，我们可以回去继续编辑，修改完保存一下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase --<span class="built_in">continue</span></span><br></pre></td></tr></table></figure>
+<p>合并 commit</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.从HEAD版本开始往过去数3个版本</span><br><span class="line">git rebase -i HEAD~3</span><br><span class="line">2.指名要合并的版本之前的版本号</span><br><span class="line">git rebase -i 3a4226b</span><br></pre></td></tr></table></figure>
+<p>修改上一次 commit 描述</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit  --amend</span><br></pre></td></tr></table></figure>
+<p>结论：只要你的分支上需要 rebase 的所有 commits 历史还没有被 push 过，就可以安全地使用 git-rebase来操作。</p>
+<h3 id="git-pull-–rebase"><a href="#git-pull-–rebase" class="headerlink" title="git pull –rebase"></a>git pull –rebase</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull = git fetch + git merge FETCH_HEAD </span><br><span class="line">git pull --rebase =  git fetch + git rebase FETCH_HEAD</span><br></pre></td></tr></table></figure>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><h3 id="i"><a href="#i" class="headerlink" title="i"></a><strong>i</strong></h3><p><code>i</code> 意思是使用 -i 或者 –interactive 选项，Git 将会进入一个交互式终端模式</p>
+<h3 id="ff"><a href="#ff" class="headerlink" title="ff"></a><strong>ff</strong></h3><p><code>ff</code> 意思是 fast-forward, 使用 merge 时，默认会使用 fast-forward 的方式合并代码<br>如果合并的分支（master）是被合并分支（feature）的上游分支，则合并成功，不会产生 merge log，<br>如果合并的分支（master）不是被合并分支（feature）的直接上游分支（比如 master 在 checkout 出 feature 分支后，又进行了几次提交），不能使用 fast-forward 的方式合并代码，git 会进行一次三方合并（magic）,如果合并成功，就会产生一个 merge log, 如果有冲突产生，则合并失败，需要解决冲突并 commit 后才能合并.</p>
+<h3 id="–no-ff"><a href="#–no-ff" class="headerlink" title="–no-ff"></a><strong>–no-ff</strong></h3><p>如果加上 <code>no-ff</code> 参数，就是默认使用三方合并的方式合并，就算合并的分支（master）是被合并分支（feature）的上游分支，也会产生一个 merge log这种做法的好处是，忠实地记录了实际发生过什么，关注点在真实的提交历史上面</p>
+<h3 id="–ff-only"><a href="#–ff-only" class="headerlink" title="–ff-only"></a><strong>–ff-only</strong></h3><p>与 <code>no-ff</code> 相反，<code>ff-only</code> 表示只接受 fast-forward 方式的合并，如果不能直接使用 fast-forward 合并，会合并失败并报错。</p>
+<h3 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h3><p><code>git rebase</code> 的用法有很多，主要是通过 <strong>replay(回放)</strong> commit来合并分支或者合并 commit log</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># newbase 的默认值是 upstream</span></span><br><span class="line"><span class="comment"># upstream 的默认值是 origin/branch</span></span><br><span class="line"><span class="comment"># branch 的默认值是当前分支</span></span><br><span class="line">$ git rebase [-i | --interactive] [--onto &lt;newbase&gt;] [&lt;upstream&gt; [&lt;branch&gt;]]</span><br></pre></td></tr></table></figure>
+<p><strong>git 会 截取 upstream..branch 之间的 commit ，然后在 newbase 的 HEAD 上 replay</strong></p>
+<ul>
+<li>如果 repaly 过程中，有的 commit 已经出现在 newbase 上，则省略该 commit</li>
+<li>如果 replay 过程中，出现冲突，则中断 rebase，并返回命令行<ul>
+<li>手动解决冲突后，执行 <code>rebase --continue</code> 就能继续 replay</li>
+<li>如果放弃导致冲突的 commit，执行 <code>rebase --skip</code> 就会跳过该 commit, rebase 完后，该 commit 会<strong>丢失</strong></li>
+<li>如果放弃这个 rebase，执行 <code>rebase --abort</code></li>
+</ul>
+</li>
+</ul>
+<p>如果加上 -i 参数，就会进入到交互式的 rebase 设置页面，一般用来合并 commit</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Commands:</span></span><br><span class="line"><span class="comment"># p, pick = use commit</span></span><br><span class="line"><span class="comment"># r, reword = use commit, but edit the commit message</span></span><br><span class="line"><span class="comment"># e, edit = use commit, but stop for amending</span></span><br><span class="line"><span class="comment"># s, squash = use commit, but meld into previous commit</span></span><br><span class="line"><span class="comment"># f, fixup = like "squash", but discard this commit's log message</span></span><br><span class="line"><span class="comment"># x, exec = run command (the rest of the line) using shell</span></span><br><span class="line"><span class="comment"># d, drop = remove commit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">pick: 只接使用這個commit，不做任何調整</span><br><span class="line">reword: 使用這個commit，只調整 commit message</span><br><span class="line">squash: 使用這個commit融入前一個commit中，合併兩個commit message來表示(可以修改)</span><br><span class="line">fixup: 使用這個commit融入前一個commit中，使用前一個commit的message來表示(不可修改)</span><br><span class="line">drop: 直接移除這個commit</span><br></pre></td></tr></table></figure>
+<h3 id="git-cherry-pick"><a href="#git-cherry-pick" class="headerlink" title="git cherry-pick"></a><strong>git cherry-pick</strong></h3><p><code>git cherry-pick</code> 与 rebase 类似，用来 <strong>replay(重放)</strong> 特定的 commit</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git cherry-pick commit [commit2] [commit3]</span><br></pre></td></tr></table></figure>
+<p>通常用于只提取某个分支上的特定提交应用到当前分支，比如在 featureA 分支上修复了一个 bug 并作了 commit bugA，在 master 分支上只想获 取 bugA 的更改，就可以使用 <code>git cherry-pick bugAId</code>如果产生冲突，处理方法跟 rebase 类似</p>
+<p>所以，使用merge还是rebase还是得分情况考虑，具体项目具体分析：</p>
+<ul>
+<li>如果项目庞大，需要一个简洁的线性历史树便于leader管理，推荐使用 <strong>git rebase</strong> 。</li>
+<li>如果是小型项目，需要审查历史纪录来便于编写过程报告，则推荐使用 <strong>git merge</strong> 。</li>
+</ul>
+<h3 id="操作练习"><a href="#操作练习" class="headerlink" title="操作练习"></a>操作练习</h3><p><a href="https://learngitbranching.js.org/?locale=zh_CN" target="_blank" rel="noopener">https://learngitbranching.js.org/?locale=zh_CN</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://imrememberlee.github.io/2019/01/23/dota2自走棋之摆烂/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1268,7 +1482,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1342,7 +1556,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">5k</span>
+    <span title="Symbols count total">8k</span>
   
 
   
@@ -1351,7 +1565,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">5 mins.</span>
+    <span title="Reading time total">7 mins.</span>
   
 </div>
 
